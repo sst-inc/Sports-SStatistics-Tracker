@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './NoteTaking.css';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Notetaking App</h1>
+      <h1>Notetaking</h1>
       <div>
         <textarea
           rows="4"
