@@ -1,9 +1,2 @@
 # no-repo-name-currently
-
-#this is a test!!!!
-#dsdsfgsdyh
-#testaaa
-#dsufhsdnfhsdof
-#test3
-#test4
-#test5
+Application for sports statistics, made by Innovatix Inc.
