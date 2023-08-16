@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './NoteTaking.css';
 
-function App() {
+function NoteTaking() {
   const [notes, setNotes] = useState([]);
   const [currentNote, setCurrentNote] = useState('');
   const [editingIndex, setEditingIndex] = useState(-1);
@@ -62,4 +61,4 @@ function App() {
   );
 }
 
-export default App;
+export default NoteTaking;
