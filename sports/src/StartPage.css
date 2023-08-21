@@ -1,0 +1,166 @@
+.android-small {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .android-small .div {
+    background-color: #ffffff;
+    border: 1px none;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    width: 293px;
+  }
+  
+  .android-small .overlap-group {
+    height: 204px;
+    left: -10px;
+    position: absolute;
+    top: 11px;
+    width: 314px;
+  }
+  
+  .android-small .rectangle {
+    background-color: #ff955a;
+    border: 1px solid;
+    border-color: #000000;
+    height: 61px;
+    left: 157px;
+    position: absolute;
+    top: 38px;
+    width: 138px;
+  }
+  
+  .android-small .rectangle-2 {
+    background-color: #c05aff;
+    border: 1px solid;
+    border-color: #000000;
+    height: 61px;
+    left: 157px;
+    position: absolute;
+    top: 39px;
+    width: 138px;
+  }
+  
+  .android-small .rectangle-3 {
+    background-color: #96c0ff;
+    border: 1px solid;
+    border-color: #000000;
+    height: 61px;
+    left: 19px;
+    position: absolute;
+    top: 38px;
+    width: 138px;
+  }
+  
+  .android-small .text-wrapper {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 41px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 232px;
+  }
+  
+  .android-small .team-name {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 42px;
+    width: 173px;
+  }
+  
+  .android-small .game-time {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 71px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 107px;
+    width: 173px;
+  }
+  
+  .android-small .team-name-2 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 141px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 42px;
+    width: 173px;
+  }
+  
+  /* ... */
+  
+  .android-small .overlap {
+    height: 97px;
+    left: 61px;
+    position: absolute;
+    top: 228px;
+    width: 173px;
+  }
+  
+  /* ... */
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
+    
+  .yellow-button {
+    background-color: #fcb001;
+    border: none;
+    border-radius: 10px;
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* Remove styles for pinkish rectangles below game time and break time */
+  .android-small .rectangle-4,
+  .android-small .rectangle-5 {
+    display: none;
+  }
+  .android-small input[type="text"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000000; /* Adjust the thickness of the underline */
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    width: 70%; /* Adjust the width of the input field */
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
