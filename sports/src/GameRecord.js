@@ -10,7 +10,11 @@ const GameRecord = () => {
     setter((prevCount) => prevCount + 1);
   };
 
-  const teamAStyle = {
+  const [teamAInterceptions, setTeamAInterceptions] = useState(0);
+  const [teamBInterceptions, setTeamBInterceptions] = useState(0);
+
+
+  const teamAGoalStyle = {
     backgroundColor: "#96c0ff",
     border: "1px solid #000000",
     borderColor: "#000000",
@@ -24,7 +28,7 @@ const GameRecord = () => {
     cursor: "pointer",
   };
 
-  const teamBStyle = {
+  const teamBGoalStyle = {
     backgroundColor: "#c05aff",
     border: "1px solid #000000",
     borderColor: "#000000",
@@ -37,8 +41,37 @@ const GameRecord = () => {
     color: "#000000",
     cursor: "pointer",
   };
+  
+  const teamAInterceptStyle = {
+    backgroundColor: "#96c0ff",
+    border: "1px solid",
+    borderColor: "#000000",
+    borderRadius: "16px",
+    height: "43px",
+    left: "13px",
+    position: "absolute",
+    top: "360px",
+    width: "115px",
+  };
+
+  const teamBInterceptStyle = {
+    backgroundColor: "#c05aff",
+    border: "1px solid #000000",
+    borderColor: "#000000",
+    borderRadius: "16px",
+    height: "43px",
+    width: "115px",
+    position: "absolute",
+    top: "361px",
+    left: "154px",
+  };
+  
+
+  console.log( setTeamBInterceptions)
+  
 
   return (
+    
     <div className="frame">
       <div className="overlap-group-wrapper">
         <div className="overlap-group">
@@ -67,26 +100,31 @@ const GameRecord = () => {
           <div className="rectangle-3" />
           <div className="rectangle-4" />
           <div className="rectangle-5" />
-          <div className="rectangle-6" />
           <div>
+              <button style={teamAInterceptStyle} onClick={() => increment(setTeamAInterceptions)}>
+                +1 Intercept
+              </button>
+            </div>
             <div>
-              <button style={teamAStyle} onClick={() => increment(setTeamAGoalsOnTarget)}>
+              <button  style= {teamBInterceptStyle} onClick={() => increment(setTeamBInterceptions)}>
+                +1 Intercept
+              </button>
+            </div>          <div>
+            <div>
+              <button style={teamAGoalStyle} onClick={() => increment(setTeamAGoalsOnTarget)}>
                 +1 Goal
               </button>
             </div>
             <div>
-              <button style={teamBStyle} onClick={() => increment(setTeamBGoalsOnTarget)}>
+              <button style={teamBGoalStyle} onClick={() => increment(setTeamBGoalsOnTarget)}>
                 +1 Goal
               </button>
             </div>
           </div>
-          <div className="rectangle-8" />
           <div className="rectangle-10" />
           <div className="rectangle-11" />
           <div className="rectangle-12" />
           <div className="rectangle-13" />
-          <div className="text-wrapper-5">+1 Interceptions</div>
-          <div className="text-wrapper-6">+1 Interceptions</div>
           <div className="element-shot-on-target">
             +1 Shot on
             <br />
