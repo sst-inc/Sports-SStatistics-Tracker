@@ -1,11 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./GameRecord.css";
-import PossessionTracker from "./Components/PossessionTracker"
-import MatchTimer from "./Components/MatchTimer"
-import Notetaking from "./Components/Notetaking"
-import ShotsTracker from "./Components/ShotsTracker"
+import MatchTimer from "./Components/MatchTimer";
 
 const GameRecord = () => {
+  const [teamAGoalsOnTarget, setTeamAGoalsOnTarget] = useState(0);
+  const [teamBGoalsOnTarget, setTeamBGoalsOnTarget] = useState(0);
+
+  const increment = (setter) => {
+    setter((prevCount) => prevCount + 1);
+  };
+
+  const teamAStyle = {
+    backgroundColor: "#96c0ff",
+    border: "1px solid #000000",
+    borderColor: "#000000",
+    borderRadius: "16px",
+    height: "43px",
+    width: "115px",
+    position: "absolute",
+    top: "304px",
+    left: "13px",
+    color: "#000000",
+    cursor: "pointer",
+  };
+
+  const teamBStyle = {
+    backgroundColor: "#c05aff",
+    border: "1px solid #000000",
+    borderColor: "#000000",
+    borderRadius: "16px",
+    height: "43px",
+    width: "115px",
+    position: "absolute",
+    top: "306px",
+    left: "154px",
+    color: "#000000",
+    cursor: "pointer",
+  };
+
   return (
     <div className="frame">
       <div className="overlap-group-wrapper">
@@ -16,7 +48,7 @@ const GameRecord = () => {
             Takeovers
             <br />2<br />
             Goals
-            <br />0<br />
+            <br />{teamAGoalsOnTarget}<br />
             Ball Time
             <br />
             1:43
@@ -25,7 +57,7 @@ const GameRecord = () => {
             Takeovers
             <br />3<br />
             Goals
-            <br />1<br />
+            <br />{teamBGoalsOnTarget}<br />
             Ball Time
             <br />
             1:79
@@ -36,10 +68,19 @@ const GameRecord = () => {
           <div className="rectangle-4" />
           <div className="rectangle-5" />
           <div className="rectangle-6" />
-          <div className="rectangle-7" />
+          <div>
+            <div>
+              <button style={teamAStyle} onClick={() => increment(setTeamAGoalsOnTarget)}>
+                +1 Goal
+              </button>
+            </div>
+            <div>
+              <button style={teamBStyle} onClick={() => increment(setTeamBGoalsOnTarget)}>
+                +1 Goal
+              </button>
+            </div>
+          </div>
           <div className="rectangle-8" />
-          <div className="text-wrapper-4">+1 Goal</div>
-          <div className="rectangle-9" />
           <div className="rectangle-10" />
           <div className="rectangle-11" />
           <div className="rectangle-12" />
@@ -62,7 +103,6 @@ const GameRecord = () => {
           <div className="rectangle-15" />
           <img className="polygon" alt="Polygon" src="polygon-1.svg" />
           <img className="img" alt="Polygon" src="polygon-2.svg" />
-          <div className="text-wrapper-9">+1 Goal</div>
 
           {/* Insert the MatchTimer component here */}
           <MatchTimer />

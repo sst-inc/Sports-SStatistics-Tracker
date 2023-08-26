@@ -12,7 +12,6 @@ export default function App() {
     <div className="App">
       <StartPage />
       <GameRecord/>
-
     </div>
   );
 }
