@@ -16,27 +16,15 @@ const ShotsTracker = () => {
 
   return (
     <div>
-      <h2>Shots Tracker</h2>
       <div>
-        <h3>Team A</h3>
-        <p>On Target: {teamAShotsOnTarget}</p>
         <button onClick={() => increment(setTeamAShotsOnTarget)}>+</button>
-        <button onClick={() => decrement(setTeamAShotsOnTarget)}>-</button>
-        <p>Off Target: {teamAShotsOffTarget}</p>
         <button onClick={() => increment(setTeamAShotsOffTarget)}>+</button>
-        <button onClick={() => decrement(setTeamAShotsOffTarget)}>-</button>
       </div>
       <div>
-        <h3>Team B</h3>
-        <p>On Target: {teamBShotsOnTarget}</p>
-        <button onClick={() => increment(setTeamBShotsOnTarget)}>+</button>
-        <button onClick={() => decrement(setTeamBShotsOnTarget)}>-</button>
-        <p>Off Target: {teamBShotsOffTarget}</p>
-        <button onClick={() => increment(setTeamBShotsOffTarget)}>+</button>
-        <button onClick={() => decrement(setTeamBShotsOffTarget)}>-</button>
+        <button onClick={() => increment(setTeamBShotsOnTarget)}>+1 Shot on Target</button>
+        <button onClick={() => increment(setTeamBShotsOffTarget)}>+1 Shot off Target</button>
       </div>
     </div>
   );
 };
 
-export default ShotsTracker;

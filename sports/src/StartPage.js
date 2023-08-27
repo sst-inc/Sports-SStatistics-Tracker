@@ -4,18 +4,12 @@ import "./StartPage.css";
 
 export const StartPage = () => {
   const [gameTime, setGameTime] = useState(20); // Default game time
-  const [breakTime, setBreakTime] = useState(6); // Default break time
+  const [team1Name, setTeam1Name] = useState(""); // State for Team 1 name
+  const [team2Name, setTeam2Name] = useState(""); // State for Team 2 name
 
   const handleGameTimeChange = (event) => {
     setGameTime(parseInt(event.target.value));
   };
-
-  const handleBreakTimeChange = (event) => {
-    setBreakTime(parseInt(event.target.value));
-  };
-
-  const [team1Name, setTeam1Name] = useState(""); // State for Team 1 name
-  const [team2Name, setTeam2Name] = useState(""); // State for Team 2 name
 
   return (
     <div className="android-small">
@@ -63,24 +57,6 @@ export const StartPage = () => {
             />
           </div>
           <div className="rectangle-4" />
-        </div>
-        <div className="overlap">
-          <div className="break-time">
-            Break Time
-            <br />
-            <input
-              type="range"
-              min="0"
-              max="15"
-              step="1"
-              className="slider"
-              value={breakTime}
-              onChange={handleBreakTimeChange}
-            />
-            <br />
-            <span className="slider-value">{breakTime}:00</span>
-          </div>
-          <div className="rectangle-5" />
         </div>
         <div className="button-container">
           <br />

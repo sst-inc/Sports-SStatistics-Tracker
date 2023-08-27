@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function MatchTimer() {
-  const [seconds, setSeconds] = useState(0);
+  const [totalSeconds, setTotalSeconds] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
 
   useEffect(() => {
@@ -9,19 +9,22 @@ function MatchTimer() {
 
     if (!isPaused) {
       interval = setInterval(() => {
-        setSeconds(prevSeconds => prevSeconds + 1);
+        setTotalSeconds(prevTotalSeconds => prevTotalSeconds + 1);
       }, 1000);
     }
 
     return () => clearInterval(interval);
   }, [isPaused]);
 
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
   const handleTogglePause = () => {
     setIsPaused(prevIsPaused => !prevIsPaused);
   };
 
   const handleReset = () => {
-    setSeconds(0);
+    setTotalSeconds(0);
     setIsPaused(true);
   };
 
@@ -33,14 +36,14 @@ function MatchTimer() {
           border: '1px solid #000000',
           borderRadius: '15px',
           height: '30px',
-          width: '90px',
+          width: '100px', // Adjusted width
           color: '#000000',
           cursor: 'pointer',
           marginRight: '50px',
         }}
         onClick={handleTogglePause}
       >
-        {isPaused ? `Start (${seconds}s)` : `Pause (${seconds}s)`}
+        {isPaused ? `Start (${minutes}:${seconds.toString().padStart(2, '0')})` : `Pause (${minutes}:${seconds.toString().padStart(2, '0')})`}
       </button>
       <button
         style={{

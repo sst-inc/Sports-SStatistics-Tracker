@@ -12,7 +12,10 @@ const GameRecord = () => {
 
   const [teamAInterceptions, setTeamAInterceptions] = useState(0);
   const [teamBInterceptions, setTeamBInterceptions] = useState(0);
-
+  const [teamAShotsOnTarget, setTeamAShotsOnTarget] = useState(0);
+  const [teamAShotsOffTarget, setTeamAShotsOffTarget] = useState(0);
+  const [teamBShotsOnTarget, setTeamBShotsOnTarget] = useState(0);
+  const [teamBShotsOffTarget, setTeamBShotsOffTarget] = useState(0);
 
   const teamAGoalStyle = {
     backgroundColor: "#96c0ff",
@@ -65,10 +68,60 @@ const GameRecord = () => {
     top: "361px",
     left: "154px",
   };
+
+  const teamAShotsOnTargetStyle = {
+    backgroundColor: "#96c0ff",
+    border: "1px solid #000000",
+    borderColor: "#000000",
+    borderRadius: "16px",
+    height: "43px",
+    width: "115px",
+    position: "absolute",
+    top: "416px",
+    left: "15px",
+  };
+  const teamBShotsOnTargetStyle = {
+    backgroundColor: "#c05aff",
+    border: "1px solid #000000",
+    borderColor: "#000000",
+    borderRadius: "16px",
+    height: "43px",
+    width: "115px",
+    position: "absolute",
+    top: "416px",
+    left: "154px",
+  };
+  
+  const teamAShotsOffTargetStyle = {
+    backgroundColor: "#96c0ff",
+    border: "1px solid #000000",
+    borderColor: "#000000",
+    borderRadius: "16px",
+    height: "43px",
+    width: "115px",
+    position: "absolute",
+    top: "480px",
+    left: "15px",
+  };
+
+  const teamBShotsOffTargetStyle = {
+    backgroundColor: "#c05aff",
+    border: "1px solid #000000",
+    borderColor: "#000000",
+    borderRadius: "16px",
+    height: "43px",
+    width: "115px",
+    position: "absolute",
+    top: "480px",
+    left: "154px",
+  };
+  
   
 
-  console.log( setTeamBInterceptions)
+
+  console.log(setTeamAShotsOnTarget)
   
+
 
   return (
     
@@ -95,8 +148,8 @@ const GameRecord = () => {
             <br />
             1:79
           </div>
-          <div className="text-wrapper-2">Team C</div>
-          <div className="text-wrapper-3">Team A</div>
+          <div className="text-wrapper-2">Team A</div>
+          <div className="text-wrapper-3">Team C</div>
           <div className="rectangle-3" />
           <div className="rectangle-4" />
           <div className="rectangle-5" />
@@ -109,7 +162,8 @@ const GameRecord = () => {
               <button  style= {teamBInterceptStyle} onClick={() => increment(setTeamBInterceptions)}>
                 +1 Intercept
               </button>
-            </div>          <div>
+            </div>          
+            <div>
             <div>
               <button style={teamAGoalStyle} onClick={() => increment(setTeamAGoalsOnTarget)}>
                 +1 Goal
@@ -121,21 +175,11 @@ const GameRecord = () => {
               </button>
             </div>
           </div>
-          <div className="rectangle-10" />
-          <div className="rectangle-11" />
-          <div className="rectangle-12" />
-          <div className="rectangle-13" />
+          <button style= {teamAShotsOnTargetStyle} onClick={() => increment(setTeamAShotsOnTarget)}>+1 Shot on target</button>         
+          <button style ={teamAShotsOffTargetStyle} onClick={() => increment(setTeamAShotsOffTarget)}>+1 shot off target</button>
+           <button style={teamBShotsOnTargetStyle} onClick={() => increment(setTeamBShotsOnTarget)}>+1 Shot on Target</button>
+           <button style={teamBShotsOffTargetStyle} onClick={() => increment(setTeamBShotsOffTarget)}>+1 Shot off Target</button>
           <div className="element-shot-on-target">
-            +1 Shot on
-            <br />
-            target
-          </div>
-          <div className="text-wrapper-7">+1 Shot off <br/>target</div>
-          <div className="text-wrapper-8">+1 Shot off target</div>
-          <div className="element-shot-on-target-2">
-            +1 Shot on
-            <br />
-            target
           </div>
           <div className="rectangle-14" />
           <div className="rectangle-15" />
