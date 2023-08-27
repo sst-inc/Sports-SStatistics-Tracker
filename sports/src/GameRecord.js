@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./GameRecord.css";
 import MatchTimer from "./Components/MatchTimer";
 
@@ -16,6 +16,58 @@ const GameRecord = () => {
   const [teamAShotsOffTarget, setTeamAShotsOffTarget] = useState(0);
   const [teamBShotsOnTarget, setTeamBShotsOnTarget] = useState(0);
   const [teamBShotsOffTarget, setTeamBShotsOffTarget] = useState(0);
+  const [possessionTeamA, setPossessionTeamA] = useState(0);
+  const [possessionTeamB, setPossessionTeamB] = useState(0);
+  const [formattedPossessionTeamA, setFormattedPossessionTeamA] = useState("0:00");
+  const [formattedPossessionTeamB, setFormattedPossessionTeamB] = useState("0:00");
+  const [activeTeam, setActiveTeam] = useState("None");
+  const [timer, setTimer] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  
+  useEffect(() => {
+    if (isRunning) {
+      const interval = setInterval(() => {
+        setTimer((prevTimer) => prevTimer + 1);
+      }, 1000);
+  
+      return () => clearInterval(interval);
+    }
+  }, [isRunning]);
+  
+  const startTimer = (team) => {
+    setActiveTeam(team);
+    setIsRunning(true);
+  };
+  
+  const stopTimer = () => {
+    const totalSeconds = activeTeam === "Team A" ? possessionTeamA + timer : possessionTeamB + timer;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+  
+    const formattedTime = formatTime(minutes, seconds);
+  
+    if (activeTeam === "Team A") {
+      setPossessionTeamA(totalSeconds);
+      setFormattedPossessionTeamA(formattedTime);
+    } else if (activeTeam === "Team B") {
+      setPossessionTeamB(totalSeconds);
+      setFormattedPossessionTeamB(formattedTime);
+    }
+  
+    setTimer(0);
+    setActiveTeam("None");
+    setIsRunning(false);
+  };
+  
+  // Function to format the time as "1:00"
+  const formatTime = (minutes, seconds) => {
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+  
+  
+  
+  
+
 
   const teamAGoalStyle = {
     backgroundColor: "#96c0ff",
@@ -115,13 +167,44 @@ const GameRecord = () => {
     top: "480px",
     left: "154px",
   };
+
+  const teamAPossessionStyle = {
+    backgroundColor: "#fcb001",
+    border: "1px solid #000000",
+    borderRadius: "19px",
+    height: "49px",
+    left: "15px",
+    position: "absolute",
+    top: "532px",
+    width: "89px"
+  };
+
+  const teamBPossessionStyle = {
+    backgroundColor: "#fcb001",
+    border: "1px solid #000000",
+    borderRadius: "19px",
+    height: "49px",
+    left: "183px",
+    position: "absolute",
+    top: "532px",
+    width: "86px"
+  };
+
+  const stopPossessionStyle = {
+    backgroundColor: "#fcb001",
+    border: "1px solid #000000",
+    borderRadius: "19px",
+    height: "55px",
+    left: "117px",
+    position: "absolute",
+    top: "530px",
+    width: "55px"
+  };
   
   
-
-
-  console.log(setTeamAShotsOnTarget)
   
-
+  
+  console.log(possessionTeamA)
 
   return (
     
@@ -137,7 +220,7 @@ const GameRecord = () => {
             <br />{teamAGoalsOnTarget}<br />
             Ball Time
             <br />
-            1:43
+            {formattedPossessionTeamB}
           </div>
           <div className="text-wrapper">
             Interceptions
@@ -146,13 +229,13 @@ const GameRecord = () => {
             <br />{teamBGoalsOnTarget}<br />
             Ball Time
             <br />
-            1:79
+            {formattedPossessionTeamA}
           </div>
           <div className="text-wrapper-2">Team A</div>
           <div className="text-wrapper-3">Team C</div>
-          <div className="rectangle-3" />
-          <div className="rectangle-4" />
-          <div className="rectangle-5" />
+          <button style={stopPossessionStyle} onClick={stopTimer}></button>
+          <button style={teamAPossessionStyle} onClick={() => startTimer("Team B")} />
+          <button style={teamBPossessionStyle} onClick={() => startTimer("Team A")} />
           <div>
               <button style={teamAInterceptStyle} onClick={() => increment(setTeamAInterceptions)}>
                 +1 Intercept

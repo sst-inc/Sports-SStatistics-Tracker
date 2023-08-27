@@ -34,30 +34,16 @@ export default function PossessionTracker() {
     setIsRunning(false);
   };
 
-  const resetTracker = () => {
-    setPossessionTeamA(0);
-    setPossessionTeamB(0);
-    setTimer(0);
-    setActiveTeam("None");
-    setIsRunning(false);
-  };
-
   return (
     <div>
-      <h2>Possession Tracker</h2>
       <div>
-        <h3>Team A</h3>
-        <p>Possession: {possessionTeamA} seconds</p>
         <button onClick={() => startTimer("Team A")}>Start</button>
       </div>
       <div>
-        <h3>Team B</h3>
-        <p>Possession: {possessionTeamB} seconds</p>
         <button onClick={() => startTimer("Team B")}>Start</button>
       </div>
       <div>
-        <button onClick={stopTimer}>Stop</button>
-        <button onClick={resetTracker}>Reset</button>
+        <button onClick={stopTimer}></button>
       </div>
     </div>
   );
