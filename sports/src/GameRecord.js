@@ -131,8 +131,8 @@ const GameRecord = () => {
           <div className="div" />
           <div className="rectangle-2" />
           <div className="takeovers-goals">
-            Takeovers
-            <br />2<br />
+            Interceptions
+            <br />{teamAInterceptions}<br />
             Goals
             <br />{teamAGoalsOnTarget}<br />
             Ball Time
@@ -140,8 +140,8 @@ const GameRecord = () => {
             1:43
           </div>
           <div className="text-wrapper">
-            Takeovers
-            <br />3<br />
+            Interceptions
+            <br />{teamBInterceptions}<br />
             Goals
             <br />{teamBGoalsOnTarget}<br />
             Ball Time

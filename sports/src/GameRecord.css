@@ -51,9 +51,9 @@
 .frame .takeovers-goals {
   color: #000000;
   font-family: "Inter-Regular", Helvetica;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
-  left: 2px;
+  left: 4px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -65,9 +65,9 @@
 .frame .text-wrapper {
   color: #000000;
   font-family: "Inter-Regular", Helvetica;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
-  left: 144px;
+  left: 142px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
