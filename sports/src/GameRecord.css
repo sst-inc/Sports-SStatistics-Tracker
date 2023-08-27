@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Set the height to the full viewport height */
+  align-items: center;
+  height: 100vh;
 }
 
 .frame .overlap-group-wrapper {
@@ -17,7 +17,6 @@
   position: relative;
   width: 285px;
 }
-
 .frame .rectangle {
   height: 600px;
   left: 1px;
@@ -140,143 +139,8 @@
   width: 89px;
 }
 
-.frame .rectangle-6 {
-  background-color: #96c0ff;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 16px;
-  height: 43px;
-  left: 13px;
-  position: absolute;
-  top: 360px;
-  width: 115px;
-}
 
-.frame .rectangle-7 {
-  background-color: #96c0ff;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 16px;
-  height: 43px;
-  left: 13px;
-  position: absolute;
-  top: 304px;
-  width: 115px;
-}
 
-.frame .text-wrapper-4 {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 39px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 315px;
-  white-space: nowrap;
-}
-
-.frame .rectangle-8 {
-  background-color: #c05aff;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 16px;
-  height: 43px;
-  left: 154px;
-  position: absolute;
-  top: 361px;
-  width: 115px;
-}
-
-.frame .rectangle-9 {
-  background-color: #c05aff;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 16px;
-  height: 43px;
-  left: 154px;
-  position: absolute;
-  top: 306px;
-  width: 115px;
-}
-
-.frame .rectangle-10 {
-  background-color: #96c0ff;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 16px;
-  height: 43px;
-  left: 15px;
-  position: absolute;
-  top: 416px;
-  width: 115px;
-}
-
-.frame .rectangle-11 {
-  background-color: #96c0ff;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 16px;
-  height: 43px;
-  left: 15px;
-  position: absolute;
-  top: 480px;
-  width: 115px;
-}
-
-.frame .rectangle-12 {
-  background-color: #c05aff;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 16px;
-  height: 43px;
-  left: 154px;
-  position: absolute;
-  top: 416px;
-  width: 115px;
-}
-
-.frame .rectangle-13 {
-  background-color: #c05aff;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 16px;
-  height: 43px;
-  left: 154px;
-  position: absolute;
-  top: 480px;
-  width: 115px;
-}
-
-.frame .text-wrapper-5 {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 372px;
-  width: 141px;
-}
-
-.frame .text-wrapper-6 {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 141px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 373px;
-  width: 141px;
-}
 
 .frame .element-shot-on-target {
   color: #000000;
@@ -292,47 +156,8 @@
   width: 141px;
 }
 
-.frame .text-wrapper-7 {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 10px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 484px;
-  width: 124px;
-}
 
-.frame .text-wrapper-8 {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 153px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 484px;
-  width: 110px;
-}
 
-.frame .element-shot-on-target-2 {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 141px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 418px;
-  width: 141px;
-}
 
 .frame .rectangle-14 {
   background-color: #000000;
@@ -382,4 +207,3 @@
   text-align: center;
   top: 315px;
 }
-
