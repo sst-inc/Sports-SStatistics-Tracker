@@ -202,10 +202,6 @@ const GameRecord = () => {
   };
   
   
-  
-  
-  console.log(possessionTeamA)
-
   return (
     
     <div className="frame">
@@ -278,4 +274,3 @@ const GameRecord = () => {
   );
 };
 
-export default GameRecord;

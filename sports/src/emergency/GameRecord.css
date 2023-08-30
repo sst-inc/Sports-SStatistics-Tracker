@@ -1,10 +1,15 @@
 .frame {
   background-color: transparent;
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Change to column layout */
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Use min-height to ensure the frame takes up at least the viewport height */
+}
+
+/* Adjust the maximum width of the content if needed */
+.frame > * {
+  max-width: 100%; /* Set the maximum width of children elements to 100% */
 }
 
 .frame .overlap-group-wrapper {

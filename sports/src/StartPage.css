@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    align-items: center;
   }
   
   .android-small .div {
@@ -164,3 +165,416 @@
     margin: 0;
     outline: none;
   }
+
+  .frame {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use full height of the viewport */
+    width: 100vw; /* Use full width of the viewport */
+
+  }
+  
+  /* Adjust the maximum width of the content if needed */
+  .frame > * {
+    max-width: 100%; /* Set the maximum width of children elements to 100% */
+  }
+  
+  .frame .overlap-group-wrapper {
+    height: 600px;
+    width: 353px;
+  }
+  
+  .frame .overlap-group {
+    height: 600px;
+    position: relative;
+    width: 285px;
+  }
+  .frame .rectangle {
+    height: 600px;
+    left: 1px;
+    position: absolute;
+    top: 0;
+    width: 278px;
+  }
+  
+  .frame .div {
+    background-color: #c05aff;
+    border: 1px solid;
+    border-color: #000000;
+    height: 235px;
+    left: 130px;
+    position: absolute;
+    top: 62px;
+    width: 150px;
+  }
+  
+  .frame .rectangle-2 {
+    background-color: #96c0ff;
+    border: 1px solid;
+    border-color: #000000;
+    height: 235px;
+    left: 2px;
+    position: absolute;
+    top: 62px;
+    width: 132px;
+  }
+  
+  .frame .takeovers-goals {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 4px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 114px;
+    width: 141px;
+  }
+  
+  .frame .text-wrapper {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 142px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 114px;
+    width: 141px;
+  }
+  
+  .frame .text-wrapper-2 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 1px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 80px;
+    width: 141px;
+  }
+  
+  .frame .text-wrapper-3 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 143px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 84px;
+    width: 141px;
+  }
+  
+  .frame .rectangle-3 {
+    background-color: #fcb001;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 19px;
+    height: 55px;
+    left: 117px;
+    position: absolute;
+    top: 530px;
+    width: 55px;
+  }
+  
+  .frame .rectangle-4 {
+    background-color: #fcb001;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 19px;
+    height: 49px;
+    left: 183px;
+    position: absolute;
+    top: 532px;
+    width: 86px;
+  }
+  
+  .frame .rectangle-5 {
+    background-color: #fcb001;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 19px;
+    height: 49px;
+    left: 15px;
+    position: absolute;
+    top: 532px;
+    width: 89px;
+  }
+  
+  
+  
+  
+  .frame .element-shot-on-target {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 2px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 418px;
+    width: 141px;
+  }
+  
+  
+  
+  
+  .frame .rectangle-14 {
+    background-color: #000000;
+    border: 1px solid;
+    height: 36px;
+    left: 150px;
+    position: absolute;
+    top: 541px;
+    width: 13px;
+  }
+  
+  .frame .rectangle-15 {
+    background-color: #000000;
+    border: 1px solid;
+    height: 36px;
+    left: 128px;
+    position: absolute;
+    top: 541px;
+    width: 13px;
+  }
+  
+  .frame .polygon {
+    height: 38px;
+    left: 216px;
+    position: absolute;
+    top: 539px;
+    width: 33px;
+  }
+  
+  .frame .img {
+    height: 38px;
+    left: 47px;
+    position: absolute;
+    top: 539px;
+    width: 33px;
+  }
+  
+  .frame .text-wrapper-9 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 176px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 315px;
+  }
+  .end-game {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.end-game .overlap-group-wrapper {
+    height: 600px;
+    width: 285px;
+}
+
+.end-game .overlap-group {
+    height: 600px;
+    position: relative;
+}
+
+
+.end-game .div {
+    height: 600px;
+    left: 1px;
+    position: absolute;
+    top: 0;
+    width: 278px;
+}
+
+.end-game .text-wrapper {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 14px;
+    width: 232px;
+}
+
+.end-game .comments-xiao-ming {
+  position: absolute;
+  top: 299px;
+  left: 17px;
+}
+
+.end-game .comments-xiao-ming input {
+  width: 240px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.end-game .comments-xiao-ming input::placeholder {
+  color: #999;
+}
+
+.end-game .comments-xiao-ming input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.end-game .rectangle-2 {
+    background-color: #c05aff;
+    border: 1px solid;
+    border-color: #000000;
+    height: 241px;
+    left: 137px;
+    position: absolute;
+    top: 47px;
+    width: 141px;
+}
+
+.end-game .rectangle-3 {
+    background-color: #96c0ff;
+    border: 1px solid;
+    border-color: #000000;
+    height: 241px;
+    left: 2px;
+    position: absolute;
+    top: 47px;
+    width: 137px;
+}
+
+.end-game .takeovers-goals {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 2px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 110px;
+    width: 141px;
+}
+
+.end-game .takeovers-goals-2 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 144px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 110px;
+    width: 141px;
+}
+
+.end-game .text-wrapper-2 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 61px;
+    width: 141px;
+}
+
+.end-game .text-wrapper-3 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 140px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 59px;
+    width: 141px;
+}
+
+.end-game .rectangle-4 {
+    background-color: #fcb001;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 19px;
+    height: 55px;
+    left: 74px;
+    position: absolute;
+    top: 534px;
+    width: 134px;
+}
+
+.end-game .rectangle-5 {
+    background-color: #fcb001;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 19px;
+    height: 55px;
+    left: 33px;
+    position: absolute;
+    top: 447px;
+    width: 213px;
+}
+
+.end-game .text-wrapper-4 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 25px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 463px;
+    width: 232px;
+}
+
+.end-game .text-wrapper-5 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 25px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 551px;
+    width: 232px;
+}

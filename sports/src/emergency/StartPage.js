@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
+import MatchTimer from './Components/MatchTimer'
 import "./StartPage.css";
 
-const App = () => {
+
+//just here in case 
+
+const AppPage = () => {
   const [teamAGoalsOnTarget, setTeamAGoalsOnTarget] = useState(0);
   const [teamBGoalsOnTarget, setTeamBGoalsOnTarget] = useState(0);
 
-//state variables 
+  const increment = (setter) => {
+    setter((prevCount) => prevCount + 1);
+  };
+
   const [teamAInterceptions, setTeamAInterceptions] = useState(0);
   const [teamBInterceptions, setTeamBInterceptions] = useState(0);
   const [teamAShotsOnTarget, setTeamAShotsOnTarget] = useState(0);
@@ -19,24 +26,6 @@ const App = () => {
   const [activeTeam, setActiveTeam] = useState("None");
   const [timer, setTimer] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-  const [gameTime, setGameTime] = useState(20);
-  const [team1Name, setTeam1Name] = useState("A");
-  const [team2Name, setTeam2Name] = useState("B");
-  const [route, setRoute] = useState('startPage');
-  const [totalSeconds, setTotalSeconds] = useState(0);
-  const [isPaused, setIsPaused] = useState(true);
-  const [comments, setComments] = useState("");
-
-
-
-  //App functions 
-  const increment = (setter) => {
-    setter((prevCount) => prevCount + 1);
-  };
-  const handleEnd = () => {
-    setIsPaused(true); // Pause the match timer
-    setRoute('endPage'); // Replace 'nextPage' with your desired route name
-  };
 
   useEffect(() => {
     if (isRunning) {
@@ -78,39 +67,17 @@ const App = () => {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
+
+
+    const [gameTime, setGameTime] = useState(20);
+    const [team1Name, setTeam1Name] = useState("");
+    const [team2Name, setTeam2Name] = useState("");
+    const [route, setRoute] = useState('startPage');
+    
     const handleGameTimeChange = (event) => {
       setGameTime(parseInt(event.target.value));
     };
 
-
-    useEffect(() => {
-      let interval;
-  
-      if (!isPaused) {
-        interval = setInterval(() => {
-          setTotalSeconds(prevTotalSeconds => prevTotalSeconds + 1);
-        }, 1000);
-      }
-  
-      return () => clearInterval(interval);
-    }, [isPaused]);
-  
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-  
-    const handleTogglePause = () => {
-      setIsPaused(prevIsPaused => !prevIsPaused);
-    };
-  
-    const handleReset = () => {
-      setTotalSeconds(0);
-      setIsPaused(true);
-    };
-
-
-
-    
-//styles
     const teamAGoalStyle = {
       backgroundColor: "#96c0ff",
       border: "1px solid #000000",
@@ -243,7 +210,8 @@ const App = () => {
       width: "55px"
     };
     
-    //app pages 
+    
+
     const generateGameRecordPage = () => {
       return (
       
@@ -270,8 +238,8 @@ const App = () => {
                 <br />
                 {formattedPossessionTeamA}
               </div>
-              <div className="text-wrapper-2">{team1Name}</div>
-              <div className="text-wrapper-3">{team2Name}</div>
+              <div className="text-wrapper-2">Team A</div>
+              <div className="text-wrapper-3">Team C</div>
               <button style={stopPossessionStyle} onClick={stopTimer}></button>
               <button style={teamAPossessionStyle} onClick={() => startTimer("Team B")} />
               <button style={teamBPossessionStyle} onClick={() => startTimer("Team A")} />
@@ -307,54 +275,10 @@ const App = () => {
               <div className="rectangle-15" />
               <img className="polygon" alt="Polygon" src="polygon-1.svg" />
               <img className="img" alt="Polygon" src="polygon-2.svg" />
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-            <button
-              style={{
-                backgroundColor: '#b4b4b4',
-                border: '1px solid #000000',
-                borderRadius: '15px',
-                height: '36px',
-                width: '110px', // Adjusted width
-                color: '#000000',
-                cursor: 'pointer',
-                marginRight: '50px',
-              }}
-              onClick={handleTogglePause}
-            >
-              {isPaused ? `Start (${minutes}:${seconds.toString().padStart(2, '0')})` : `Pause (${minutes}:${seconds.toString().padStart(2, '0')})`}
-            </button>
-            <button
-              style={{
-                backgroundColor: '#ff0000',
-                border: '1px solid #000000',
-                borderRadius: '19px',
-                height: '45px',
-                width: '58px',
-                color: '#000000',
-                cursor: 'pointer',
-                marginLeft: '50px',
-              }}
-              onClick={handleReset}
-            >
-                Reset
-              </button>
-              <button
-            style={{
-              backgroundColor: '#ff0000',
-              border: '1px solid #000000',
-              borderRadius: '19px',
-              height: '45px',
-              width: '58px',
-              color: '#000000',
-              cursor: 'pointer',
-              marginLeft: '10px', // Adjust the margin as needed
-            }}
-            onClick={handleEnd}
-          >
-            End
-          </button>
-            
-              </div>
+    
+              {/* Insert the MatchTimer component here */}
+              <MatchTimer />
+              
             </div>
           </div>
         </div>
@@ -436,65 +360,13 @@ const App = () => {
         </div>
       );
     };
-  
-    const generateEndGame = () => {
-      return (
-        <div className="end-game">
-            <div className="overlap-group-wrapper">
-                <div className="overlap-group">
-                    <div className="rectangle" />
-                    <div className="div" />
-                    <div className="text-wrapper">End Game Statistics</div>
-                    <div className="comments-xiao-ming">
-                        <input
-                          type="text"
-                          id="comments"
-                          value={comments}
-                          onChange={(e) => setComments(e.target.value)}
-                          placeholder="Enter your comments"
-                    />
-                    </div>
-                    <div className="rectangle-2" />
-                    <div className="rectangle-3" />
-                    <div className="takeovers-goals">
-                        Interceptions
-                        <br />{teamAInterceptions}<br />
-                        Goals
-                        <br />{teamAGoalsOnTarget}<br />
-                        Ball Time
-                        <br />
-                        {formattedPossessionTeamA}
-                    </div>
-                    <div className="takeovers-goals-2">
-                        Interceptions
-                        <br />{teamBInterceptions}<br />
-                        Goals
-                        <br />{teamBGoalsOnTarget}<br />
-                        Ball Time
-                        <br />
-                        {formattedPossessionTeamB}
-                    </div>
-                    <div className="text-wrapper-2">{team1Name}</div>
-                    <div className="text-wrapper-3">{team2Name}</div>
-                    <div className="rectangle-4" />
-                    <div className="rectangle-5" />
-                    <div className="text-wrapper-4">Export to Spreadsheet</div>
-                    <div className="text-wrapper-5">DONE</div>
-                </div>
-            </div>
-        </div>
-    );
-};
 
-//goofy manual routing 
     const renderComponent = () => {
       switch (route) {
         case 'startPage':
           return generateStartPage();
         case 'gameRecord':
           return generateGameRecordPage();
-        case 'endPage':
-          return generateEndGame();
         default:
           return null;
       }
@@ -507,5 +379,4 @@ const App = () => {
     );
 
     };
-
-    export default App;
+export default AppPage;
