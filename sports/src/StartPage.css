@@ -563,6 +563,15 @@
     text-align: center;
     top: 463px;
     width: 232px;
+    background-color: #fcb001;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 19px;
+    height: 55px;
+    left: 33px;
+    position: absolute;
+    top: 447px;
+    width: 213px;
 }
 
 .end-game .text-wrapper-5 {

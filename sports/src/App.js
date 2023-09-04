@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./StartPage.css";
+import gapi from 'gapi-client';
 
 const App = () => {
   const [teamAGoalsOnTarget, setTeamAGoalsOnTarget] = useState(0);
@@ -29,7 +30,56 @@ const App = () => {
 
 
 
+
   //App functions 
+
+// Function to initialize Google Sheets API and create/update Google Sheets
+function generateCSVData() {
+  const csvData = [];
+  
+  // Add headers
+  
+  // Add team1Name and comments
+  csvData.push([team1Name, team1Name, "", comments]);
+  
+  // Add headers for team stats
+  csvData.push(["", "Goals", "Interceptions", "Shots on Target", "Shots off Target", "Formatted Possession Time"]);
+  
+  // Add Team A stats
+  csvData.push([team1Name, teamAGoalsOnTarget, teamAInterceptions, teamAShotsOnTarget, teamAShotsOffTarget, formattedPossessionTeamA]);
+  
+  // Add Team B stats
+  csvData.push([team2Name, teamBGoalsOnTarget, teamBInterceptions, teamBShotsOnTarget, teamBShotsOffTarget, formattedPossessionTeamB]);
+  
+  // Convert to CSV format
+  const csvContent = csvData.map((row) => row.join(",")).join("\n");
+  
+  return csvContent;
+}
+
+function exportToCSV() {
+  const csvContent = generateCSVData();
+  const blob = new Blob([csvContent], { type: "text/csv" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "game_stats.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+const handleDoneButtonClick = () => {
+  // Set the route to 'startPage' when the button is clicked
+  setRoute('startPage');
+};
+
+
+
+
+// Call the initializeAndCreateUpdateGoogleSheets function whenever the button is clicked
+// This will initialize the Google Sheets API and create/update a new spreadsheet with the data
+
+
   const increment = (setter) => {
     setter((prevCount) => prevCount + 1);
   };
@@ -106,6 +156,8 @@ const App = () => {
       setTotalSeconds(0);
       setIsPaused(true);
     };
+
+
 
 
 
@@ -477,9 +529,15 @@ const App = () => {
                     <div className="text-wrapper-2">{team1Name}</div>
                     <div className="text-wrapper-3">{team2Name}</div>
                     <div className="rectangle-4" />
-                    <div className="rectangle-5" />
-                    <div className="text-wrapper-4">Export to Spreadsheet</div>
-                    <div className="text-wrapper-5">DONE</div>
+                    <button className="rectangle-5" onClick={exportToCSV}>
+                      Export to Spreadsheet
+                    </button>
+                    <div className="text-wrapper-5">
+                      <button onClick={handleDoneButtonClick}>
+                        Done
+                      </button>
+                    </div>
+                    <p></p>
                 </div>
             </div>
         </div>
