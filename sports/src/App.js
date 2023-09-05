@@ -29,6 +29,7 @@ const App = () => {
   const [comments, setComments] = useState("");
 
 
+  
 
 
   //App functions 
@@ -75,9 +76,6 @@ const handleDoneButtonClick = () => {
 
 
 
-
-// Call the initializeAndCreateUpdateGoogleSheets function whenever the button is clicked
-// This will initialize the Google Sheets API and create/update a new spreadsheet with the data
 
 
   const increment = (setter) => {
@@ -153,12 +151,29 @@ const handleDoneButtonClick = () => {
     };
   
     const handleReset = () => {
+      setTeamAGoalsOnTarget(0);
+      setTeamBGoalsOnTarget(0);
+      setTeamAInterceptions(0);
+      setTeamBInterceptions(0);
+      setTeamAShotsOnTarget(0);
+      setTeamAShotsOffTarget(0);
+      setTeamBShotsOnTarget(0);
+      setTeamBShotsOffTarget(0);
+      setPossessionTeamA(0);
+      setPossessionTeamB(0);
+      setFormattedPossessionTeamA("0:00");
+      setFormattedPossessionTeamB("0:00");
+      setActiveTeam("None");
+      setTimer(0);
+      setIsRunning(false);
+      setGameTime(20); // Reset game time to its initial value
+      setTeam1Name("A");
+      setTeam2Name("B");
+      setRoute("startPage");
       setTotalSeconds(0);
       setIsPaused(true);
+      setComments(""); // Reset comments to an empty string
     };
-
-
-
 
 
     
