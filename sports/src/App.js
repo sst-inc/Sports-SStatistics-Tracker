@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./StartPage.css";
-import gapi from 'gapi-client';
 
 const App = () => {
   const [teamAGoalsOnTarget, setTeamAGoalsOnTarget] = useState(0);
@@ -27,7 +26,7 @@ const App = () => {
   const [totalSeconds, setTotalSeconds] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
   const [comments, setComments] = useState("");
-
+  const [isGameOver, setIsGameOver] = useState(false);
 
   
 
@@ -370,10 +369,6 @@ const handleDoneButtonClick = () => {
               <button style={teamBShotsOffTargetStyle} onClick={() => increment(setTeamBShotsOffTarget)}>+1 Shot off Target</button>
               <div className="element-shot-on-target">
               </div>
-              <div className="rectangle-14" />
-              <div className="rectangle-15" />
-              <img className="polygon" alt="Polygon" src="polygon-1.svg" />
-              <img className="img" alt="Polygon" src="polygon-2.svg" />
               <div style={{ display: 'flex', alignItems: 'center' }}>
             <button
               style={{
@@ -547,8 +542,22 @@ const handleDoneButtonClick = () => {
                     <button className="rectangle-5" onClick={exportToCSV}>
                       Export to Spreadsheet
                     </button>
-                    <div className="text-wrapper-5">
-                      <button onClick={handleDoneButtonClick}>
+                    <div>
+                      <button
+                        onClick={handleDoneButtonClick}
+                        style={{
+                          backgroundColor: "#fcb001",
+                          border: "1px solid #000000",
+                          borderRadius: "19px",
+                          height: "55px",
+                          left: "74px",
+                          position: "absolute",
+                          top: "534px",
+                          width: "134px",
+                          color: "#000000", // Add text color property
+                          cursor: "pointer", // Add cursor property
+                        }}
+                      >
                         Done
                       </button>
                     </div>
